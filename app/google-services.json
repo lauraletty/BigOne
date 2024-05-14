@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "785955364528",
+    "project_id": "bigone-72d26",
+    "storage_bucket": "bigone-72d26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785955364528:android:af53f3a353cf0d21586575",
+        "android_client_info": {
+          "package_name": "com.example.emergencylink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7JDMJkzV9DXrZR8z9KRKeTSlgI-FCGfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
