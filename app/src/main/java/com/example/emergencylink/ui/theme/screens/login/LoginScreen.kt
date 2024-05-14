@@ -48,6 +48,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.emergencylink.R
 import com.example.emergencylink.data.AuthViewModel
+import com.example.emergencylink.navigation.FIRST_URL
 import com.example.emergencylink.navigation.HOME_URL
 import com.example.emergencylink.navigation.SIGNUP_URL
 
@@ -126,9 +127,11 @@ fun LoginScreen(navController:NavHostController){
            modifier = Modifier
                .fillMaxWidth()
                .padding(start = 30.dp, end = 30.dp),
-           keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+           keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+           visualTransformation = PasswordVisualTransformation()
+
        )
-       Spacer(modifier = Modifier.height(35.dp))
+       Spacer(modifier = Modifier.height(45.dp))
        Box(
            modifier = Modifier.fillMaxWidth(),
            contentAlignment = Alignment.Center
@@ -139,38 +142,50 @@ fun LoginScreen(navController:NavHostController){
                    authViewModel.login(email, password)
                },
                colors = ButtonDefaults.buttonColors(Color.Blue),
-               shape = RoundedCornerShape(5.dp)
+               shape = RoundedCornerShape(5.dp),
+               modifier = Modifier.padding(top = 10.dp)
            ) {
-               Text(text = "Log In")
+               Text(text = "LOGIN")
            }
-           Spacer(modifier = Modifier.height(35.dp))
-           Row {
-               Spacer(modifier = Modifier.height(25.dp))
-               Divider(modifier = Modifier
-                   .width(180.dp)
-                   .padding(start = 13.dp, end = 10.dp, top = 90.dp)
-                   .height(2.dp),
-                   color = Color.Black)
-           }
-       }
-       Spacer(modifier = Modifier.height(10.dp))
-       Text(text = "Don't have an Account ?",
-           modifier = Modifier
-               .padding(start = 20.dp))
-       Spacer(modifier = Modifier.height(15.dp))
-       Box (modifier = Modifier
-           .padding(start = 15.dp)){
-           Button(onClick = { navController.navigate(SIGNUP_URL) },colors = ButtonDefaults.buttonColors(Color.Blue),
-               shape = RoundedCornerShape(5.dp)) {
-               Text(text = "Sign Up")
 
-           }
        }
-       Spacer(modifier = Modifier.height(10.dp))
+       Spacer(modifier = Modifier.height(30.dp))
+     Row {
+         Column {
+             Text(
+                 text = "Don't have an Account ?",
+                 modifier = Modifier
+                     .padding(start = 20.dp, top = 20.dp),
+                 fontSize = 20.sp,
+                 fontFamily = FontFamily.Serif,
+                 fontWeight = FontWeight.Bold,
+                 textDecoration = TextDecoration.Underline
+             )
+         }
+         Spacer(modifier = Modifier.width(20.dp))
+
+         Column {
+                 Box (modifier = Modifier
+                     .padding(start = 15.dp)){
+                     Button(onClick = { navController.navigate(SIGNUP_URL) },colors = ButtonDefaults.buttonColors(Color.Blue),
+                         shape = RoundedCornerShape(5.dp)) {
+                         Text(text = "SIGN UP")
+
+                     }
+
+             }
+         }
+     }
+       Spacer(modifier = Modifier.height(20.dp))
        Text(text = "Continue as a guest.",
-           fontWeight = FontWeight.ExtraBold,
+           fontSize = 20.sp,
+           fontFamily = FontFamily.Serif,
+           fontWeight = FontWeight.Bold,
+           textDecoration = TextDecoration.Underline,
            modifier = Modifier
-               .clickable {  }
+               .clickable {
+                   navController.navigate(FIRST_URL)
+               }
                .padding(start = 20.dp))
        Spacer(modifier = Modifier.height(15.dp))
    }

@@ -38,6 +38,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -144,7 +146,8 @@ fun SignupScreen(navController:NavHostController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 30.dp, end = 30.dp),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            visualTransformation = PasswordVisualTransformation()
         )
         Spacer(modifier = Modifier.height(30.dp))
         Box(
@@ -162,6 +165,41 @@ fun SignupScreen(navController:NavHostController) {
                 Text(text = "Sign Up")
             }
         }
+
+        Spacer(modifier = Modifier.height(15.dp))
+
+        Row {
+            Spacer(modifier = Modifier.width(25.dp))
+
+            Divider(modifier = Modifier
+                .width(150.dp)
+                .padding(top = 10.dp, end = 10.dp)
+                .height(2.dp), color = Color.Black)
+
+            Text(text = "OR", fontSize = 15.sp)
+
+            Divider(modifier = Modifier
+                .width(150.dp)
+                .padding(top = 10.dp, start = 10.dp)
+                .height(2.dp), color = Color.Black)
+
+            Spacer(modifier = Modifier.width(15.dp))
+        }
+        Spacer(modifier = Modifier.height(15.dp))
+
+        Text(
+            text = "Have an Account.LOGIN ?",
+            modifier = Modifier
+                .padding(start = 20.dp)
+                .clickable {
+                           navController.navigate(LOGIN_URL)
+                },
+            fontSize = 20.sp,
+            fontFamily = FontFamily.Serif,
+            fontWeight = FontWeight.Bold,
+            textDecoration = TextDecoration.Underline
+        )
+
     }
 }
 @Composable

@@ -38,7 +38,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.emergencylink.R
+import com.example.emergencylink.navigation.ACCIDENT_URL
 import com.example.emergencylink.navigation.CALL_URL
+import com.example.emergencylink.navigation.EARTQUACKE_URL
+import com.example.emergencylink.navigation.FIRE_URL
+import com.example.emergencylink.navigation.FLOOD_URL
 import com.example.emergencylink.navigation.HOME_URL
 import com.example.emergencylink.ui.theme.Purple80
 
@@ -103,7 +107,7 @@ fun emergencyscreen(navController: NavHostController){
                             modifier = Modifier
                                 .fillMaxSize()
                                 .clickable {
-                                    navController.navigate(CALL_URL)
+                                    navController.navigate(FIRE_URL)
                                 },
                             contentScale = ContentScale.FillBounds)
 
@@ -118,7 +122,7 @@ fun emergencyscreen(navController: NavHostController){
                     color = Color.Red,
                     modifier = Modifier
                         .clickable {
-                            navController.navigate(CALL_URL)
+                            navController.navigate(FIRE_URL)
                         }
                         .padding(start = 25.dp),
                     fontWeight = FontWeight.ExtraBold)
@@ -141,7 +145,7 @@ fun emergencyscreen(navController: NavHostController){
                             modifier = Modifier
                                 .fillMaxSize()
                                 .clickable {
-                                    navController.navigate(CALL_URL)
+                                    navController.navigate(FLOOD_URL)
                                 },
                             contentScale = ContentScale.FillBounds)
 
@@ -156,7 +160,7 @@ fun emergencyscreen(navController: NavHostController){
                     color = Color.Red,
                     modifier = Modifier
                         .clickable {
-                            navController.navigate(CALL_URL)
+                            navController.navigate(FLOOD_URL)
                         }
                         .padding(start = 25.dp),
                     fontWeight = FontWeight.ExtraBold)
@@ -193,7 +197,7 @@ fun emergencyscreen(navController: NavHostController){
                             modifier = Modifier
                                 .fillMaxSize()
                                 .clickable {
-                                    navController.navigate(CALL_URL)
+                                    navController.navigate(ACCIDENT_URL)
                                 },
                             contentScale = ContentScale.FillBounds
                         )
@@ -209,7 +213,7 @@ fun emergencyscreen(navController: NavHostController){
                     color = Color.Red,
                     modifier = Modifier
                         .clickable {
-                            navController.navigate(CALL_URL)
+                            navController.navigate(ACCIDENT_URL)
                         }
                         .padding(start = 25.dp),
                     fontWeight = FontWeight.ExtraBold)
@@ -218,7 +222,7 @@ fun emergencyscreen(navController: NavHostController){
 
             }
             //End of Column1
-            Spacer(modifier = Modifier.width(45.dp))
+            Spacer(modifier = Modifier.width(55.dp))
             //Column2
             Column {
                 Card(
@@ -237,7 +241,7 @@ fun emergencyscreen(navController: NavHostController){
                             modifier = Modifier
                                 .fillMaxSize()
                                 .clickable {
-                                    navController.navigate(CALL_URL)
+                                    navController.navigate(EARTQUACKE_URL)
                                 },
                             contentScale = ContentScale.FillBounds
                         )
@@ -253,7 +257,7 @@ fun emergencyscreen(navController: NavHostController){
                     color = Color.Red,
                     modifier = Modifier
                         .clickable {
-                            navController.navigate(CALL_URL)
+                            navController.navigate(EARTQUACKE_URL)
                         }
                         .padding(start = 25.dp),
                     fontWeight = FontWeight.ExtraBold)

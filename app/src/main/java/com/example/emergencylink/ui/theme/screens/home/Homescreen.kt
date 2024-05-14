@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.emergencylink.R
@@ -38,7 +40,7 @@ fun HomeScreen(navController: NavHostController){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(PurpleGrey40),
+            .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -63,10 +65,12 @@ fun HomeScreen(navController: NavHostController){
            Button(onClick = {
                navController.navigate(LOGIN_URL)
            },
+               colors = ButtonDefaults.buttonColors(Color.Red),
                modifier = Modifier.padding(start = 100.dp)) {
 
                Text(text = "LOGIN",
                    fontWeight = FontWeight.ExtraBold,
+                   color = Color.White,
                    modifier = Modifier
                        .size(120.dp, height = 20.dp)
                        .padding(start = 30.dp, end = 30.dp),
@@ -86,7 +90,7 @@ fun HomeScreen(navController: NavHostController){
                    .padding(top = 10.dp, end = 10.dp)
                    .height(2.dp), color = Color.Black)
 
-               Text(text = "or")
+               Text(text = "OR", fontSize = 15.sp)
 
                Divider(modifier = Modifier
                    .width(150.dp)
@@ -102,11 +106,13 @@ fun HomeScreen(navController: NavHostController){
            Button(onClick = {
                navController.navigate(SIGNUP_URL)
            },
+               colors = ButtonDefaults.buttonColors(Color.Red),
                modifier = Modifier.padding(start = 100.dp)
                ) {
 
-               Text(text = "Register",
+               Text(text = "REGISTER",
                    fontWeight = FontWeight.ExtraBold,
+                   color = Color.White,
                    modifier = Modifier
                        .size(120.dp, height = 20.dp)
                        .padding(start = 30.dp, end = 30.dp),

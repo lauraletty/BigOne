@@ -23,7 +23,7 @@ fun spinalscreen(navController: NavHostController){
             .background(PurpleGrey40),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        Image(painter = painterResource(id = R.drawable.heartattackaid),
+        Image(painter = painterResource(id = R.drawable.spinalinjuryaid),
             contentDescription ="first aid nose",
             modifier = Modifier
                 .fillMaxSize()

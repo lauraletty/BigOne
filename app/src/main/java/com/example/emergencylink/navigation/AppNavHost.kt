@@ -7,6 +7,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.emergencylink.ui.theme.screens.Fire.firescreen
+import com.example.emergencylink.ui.theme.screens.accident.accidentscreen
 import com.example.emergencylink.ui.theme.screens.call.callscreen
 import com.example.emergencylink.ui.theme.screens.anklesprain.AddAnkleScreen
 import com.example.emergencylink.ui.theme.screens.anklesprain.ViewAnkleScreen
@@ -21,11 +23,13 @@ import com.example.emergencylink.ui.theme.screens.chestpain.AddChestpainScreen
 import com.example.emergencylink.ui.theme.screens.chestpain.ViewChestpainScreen
 import com.example.emergencylink.ui.theme.screens.chestpain.chestscreen
 import com.example.emergencylink.ui.theme.screens.dashboard.dashboardscreen
+import com.example.emergencylink.ui.theme.screens.earhquake.earthquackescreen
 import com.example.emergencylink.ui.theme.screens.emergency.emergencyscreen
 import com.example.emergencylink.ui.theme.screens.faint.AddFaintScreen
 import com.example.emergencylink.ui.theme.screens.faint.ViewFaintScreen
 import com.example.emergencylink.ui.theme.screens.faint.faintscreen
 import com.example.emergencylink.ui.theme.screens.first.firstscreen
+import com.example.emergencylink.ui.theme.screens.flood.floodscreen
 import com.example.emergencylink.ui.theme.screens.heartattack.AddHeartattackScreen
 import com.example.emergencylink.ui.theme.screens.heartattack.ViewHeartattackScreen
 import com.example.emergencylink.ui.theme.screens.heartattack.heartattackscreen
@@ -111,6 +115,18 @@ fun AppNavHost(modifier: Modifier = Modifier,
 
         composable(EMERGENCY_URL){
             emergencyscreen(navController = navController)
+        }
+        composable(FLOOD_URL){
+            floodscreen(navController = navController)
+        }
+        composable(FIRE_URL){
+            firescreen(navController = navController)
+        }
+        composable(ACCIDENT_URL){
+            accidentscreen(navController = navController)
+        }
+        composable(EARTQUACKE_URL){
+            earthquackescreen(navController = navController)
         }
         composable(ADDANKLESCREEN_URL){
             AddAnkleScreen(navController = navController)

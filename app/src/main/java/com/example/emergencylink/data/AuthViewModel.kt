@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.navigation.NavHostController
 import com.example.emergencylink.models.User
 import com.example.emergencylink.navigation.DASHBOARD_URL
+import com.example.emergencylink.navigation.FIRST_URL
 import com.example.emergencylink.navigation.HOME_URL
 import com.example.emergencylink.navigation.LOGIN_URL
 import com.google.firebase.auth.FirebaseAuth
@@ -47,7 +48,7 @@ class AuthViewModel(var navController:NavHostController, var context:Context) {
             progress.dismiss()
             if (it.isSuccessful){
                 Toast.makeText(this.context, "Logged in successfully", Toast.LENGTH_SHORT).show()
-                navController.navigate(DASHBOARD_URL)
+                navController.navigate(FIRST_URL)
             }else{
                 Toast.makeText(this.context, "Error.Please try again.", Toast.LENGTH_SHORT).show()
             }

@@ -45,6 +45,7 @@ import com.example.emergencylink.R
 import com.example.emergencylink.navigation.ANKLE_URL
 import com.example.emergencylink.navigation.BROKENLIMB_URL
 import com.example.emergencylink.navigation.BURN_URL
+import com.example.emergencylink.navigation.CALL_URL
 import com.example.emergencylink.navigation.CHEST_URL
 import com.example.emergencylink.navigation.FAINT_URL
 import com.example.emergencylink.navigation.HEARTATTACK_URL
@@ -63,15 +64,14 @@ fun dashboardscreen(navController: NavHostController){
 
         //TopAppBar
         val mContext = LocalContext.current
-        TopAppBar(title = { Text(text = "Firstaid", color = Color.Red)},
+        TopAppBar(title = { Text(text = "Firstaid", fontSize = 30.sp, color = Color.Red)},
             colors = TopAppBarDefaults.mediumTopAppBarColors(Color.DarkGray),
 
 
             actions = {
                 IconButton(onClick = {
-                    val callIntent=Intent(Intent.ACTION_DIAL)
-                    callIntent.data="tel:911".toUri()
-                    mContext.startActivity(callIntent) }) {
+                    navController.navigate(CALL_URL)
+                    }) {
                     Icon(
                         imageVector = Icons.Default.Call,
                         contentDescription = "call",
@@ -104,8 +104,12 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.nosebleed),
                                 contentDescription = "nosebleed",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(NOSEBLEED_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
+
 
                         }
 
@@ -136,7 +140,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.faint),
                                 contentDescription = "Faint",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(FAINT_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
@@ -171,7 +178,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.chestpain),
                                 contentDescription = "chestpain",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(CHEST_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
@@ -203,7 +213,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.hearattack),
                                 contentDescription = "heartattack",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(HEARTATTACK_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
@@ -238,7 +251,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.brokenleg),
                                 contentDescription = "anklesprain",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(BROKENLIMB_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
@@ -270,7 +286,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.anklesprain),
                                 contentDescription = "anklesprain",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(ANKLE_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
@@ -305,7 +324,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.spinalinjury),
                                 contentDescription = "Fever",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(SPINAL_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
@@ -337,7 +359,10 @@ fun dashboardscreen(navController: NavHostController){
                             contentAlignment = Alignment.Center){
                             Image(painter = painterResource(id = R.drawable.burn),
                                 contentDescription = "Fever",
-                                modifier = Modifier.fillMaxSize(),
+                                modifier = Modifier.fillMaxSize()
+                                    .clickable {
+                                        navController.navigate(BURN_URL)
+                                    },
                                 contentScale = ContentScale.FillBounds)
 
                         }
